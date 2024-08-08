@@ -14,31 +14,41 @@ function Sidebar() {
         <span>
           <FaHome />
         </span>
-        <NavLink>خانه</NavLink>
+        <NavLink to='/' className={(link) => (link.isActive ? "active" : "")}>
+          خانه
+        </NavLink>
       </li>
       <li className="Sidebar-item">
         <span>
           <FaProductHunt />
         </span>
-        <NavLink>محصولات</NavLink>
+        <NavLink to='/products' className={(link) => (link.isActive ? "active" : "")}>
+          محصولات
+        </NavLink>
       </li>
       <li className="Sidebar-item">
         <span>
           <FaUsers />
         </span>
-        <NavLink>کاربران</NavLink>
+        <NavLink to='/users' className={(link) => (link.isActive ? "active" : "")}>
+          کاربران
+        </NavLink>
       </li>
       <li className="Sidebar-item">
         <span>
           <FaUserPlus />
         </span>
-        <NavLink>کاربر جدید</NavLink>
+        <NavLink to='/newuser' className={(link) => (link.isActive ? "active" : "")}>
+          کاربر جدید
+        </NavLink>
       </li>
       <li className="Sidebar-item">
         <span>
           <FaPlusCircle />
         </span>
-        <NavLink>محصول جدید</NavLink>
+        <NavLink to='/newproduct' className={(link) => (link.isActive ? "active" : "")}>
+          محصول جدید
+        </NavLink>
       </li>
     </ul>
   );

@@ -6,18 +6,24 @@
 
 .Sidebar li {
     color: #ffff;
-    font-size: 20px;
+    padding: 20px 10px;
 }
 
-.Sidebar li:hover {
-    background-color: grey;
+.Sidebar li a:hover  {
+    border-bottom: 3px solid #ffff;
+    transition: 0.25s;
 }
 
 .Sidebar li a {
     text-decoration: none;
     color: #ffff;
+    padding: 0 0 10px 0;
 }
 
 .Sidebar li svg {
     font-size: 23px;
+}
+
+.active {
+    border-bottom: 3px solid #ffff;
 }
