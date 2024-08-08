@@ -9,18 +9,14 @@ function NavMenu() {
     <div className="NavMenu">
       <img src="/assets/logo.png" className="logo" alt="" />
       <form action="#" id="Search-form">
-        <input
-          type="search"
-          className="Search-input"
-          placeholder="Search"
-        />
+        <input type="search" className="Search-input" placeholder="جست و جو" />
         <button className="Search-btn">
           <FaSearch />
         </button>
       </form>
       <div className="Nav-actions">
-        <IoIosNotifications/>
-        <IoExit/>
+        <IoIosNotifications />
+        <IoExit />
       </div>
     </div>
   );

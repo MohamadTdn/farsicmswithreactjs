@@ -5,7 +5,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import NavMenu from "./Components/NavMenu/NavMenu";
-import './App.css'
+import Sidebar from "./Components/Sidebar/Sidebar";
+import "./App.css";
 
 function App() {
   let router = useRoutes(routes);
@@ -14,7 +15,9 @@ function App() {
     <Container fluid className="App">
       <NavMenu />
       <Row>
-        <Col lg={3}>test component</Col>
+        <Col lg={3}>
+          <Sidebar />
+        </Col>
         <Col lg={9}>{router}</Col>
       </Row>
     </Container>
