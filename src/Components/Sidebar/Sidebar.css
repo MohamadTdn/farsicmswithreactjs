@@ -1,0 +1,23 @@
+.Sidebar {
+    list-style-type: none;
+    background-color: #1307ff;
+    height: 100vh;
+}
+
+.Sidebar li {
+    color: #ffff;
+    font-size: 20px;
+}
+
+.Sidebar li:hover {
+    background-color: grey;
+}
+
+.Sidebar li a {
+    text-decoration: none;
+    color: #ffff;
+}
+
+.Sidebar li svg {
+    font-size: 23px;
+}

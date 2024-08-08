@@ -15,10 +15,10 @@ function App() {
     <Container fluid className="App">
       <NavMenu />
       <Row>
-        <Col lg={3}>
+        <Col lg={2}>
           <Sidebar />
         </Col>
-        <Col lg={9}>{router}</Col>
+        <Col lg={10}>{router}</Col>
       </Row>
     </Container>
   );
