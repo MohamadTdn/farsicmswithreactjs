@@ -1,6 +1,6 @@
 import React from 'react'
 import Statistics from '../Components/Statostocs/Statistics'
-import staticDatas from '../Datas'
+import {staticDatas} from '../Datas'
 
 function Home() {
   return (
@@ -12,6 +12,10 @@ function Home() {
             <Statistics {...data} />
           )
         })}
+      </div>
+      <h4>نمودار</h4>
+      <div>
+        
       </div>
     </div>
   )
