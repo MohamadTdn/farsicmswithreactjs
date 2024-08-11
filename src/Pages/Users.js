@@ -30,7 +30,7 @@ function Users() {
                 </td>
                 <td>
                   <Button variant="contained" color="error">حذف</Button>
-                  <span style={{ padding: '8px 15px' , margin: '15px' ,backgroundColor: 'blue', color: '#ffff'}} className="Edit-btn"><MdEdit/></span>
+                  <button style={{padding: '5px 15px', margin: '10px', backgroundColor: 'blue', color: '#ffff', border: 'none'}} className="edit-btn"><MdEdit/></button>
                 </td>
               </tr>
             );

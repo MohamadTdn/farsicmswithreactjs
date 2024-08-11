@@ -40,4 +40,13 @@ let TransactionsList = [
     {id: 5 ,owner: 'Reza', price: 12000000, status: 'pending'},
 ]
 
-export {xAxis, staticDatas, users, TransactionsList} 
+let products = [
+    {id: 1, title: 'airpod pro', price: 5000000, count: 10, imgSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyYZWELjrNPEYIYfXe77LSKFM_ip3JKzuXqQ&s'},
+    {id: 2, title: 'ps5', price: 25000000, count: 13, imgSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyFKjh8396r0MOw6NEQbevibxpTbFBzQY72Q&s'},
+    {id: 3, title: 'iphone 15', price: 80000000, count: 11, imgSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXmBKfGjvP5Q8t4G9-L0XqXYAeX89Y_YnhtQ&s'},
+    {id: 4, title: 'galaxy bods', price: 5000000, count: 7, imgSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX3q7bOTI9gpSI-IIOzPw3_76UujzGK9Arcg&s'},
+    {id: 5, title: 'zfold 5', price: 70000000, count: 16, imgSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTjKdRYR2UVBbWlLBzyGQ4Z4gastKpsXINtg&s'},
+    {id: 6, title: 'ps4', price: 18000000, count: 4, imgSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAmp_c8EHRY-jj2tEhtbhvk0ZoNyMTlZEnVg&s'},
+]
+
+export {xAxis, staticDatas, users, TransactionsList, products} 
