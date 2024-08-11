@@ -32,4 +32,12 @@ let users = [
     {id: 9, name: 'mehdi', age: 26, imgSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQqg-SOspgefn5JxSHHBpKLs1zpMlsjEzNIA&s'}
 ]
 
-export {xAxis, staticDatas, users} 
+let TransactionsList = [
+    {id: 1 ,owner: 'Mohamad', price: 12000000, status: 'success'},
+    {id: 2 ,owner: 'Ali', price: 500000, status: 'fail'},
+    {id: 3 ,owner: 'Amin', price: 3000000, status: 'fail'},
+    {id: 4 ,owner: 'Mehdi', price: 200000, status: 'success'},
+    {id: 5 ,owner: 'Reza', price: 12000000, status: 'pending'},
+]
+
+export {xAxis, staticDatas, users, TransactionsList} 

@@ -3,11 +3,14 @@ import Statistics from "../Components/Statostocs/Statistics";
 import { staticDatas } from "../Datas";
 import Chart from "../Components/Chart/Chart";
 import NewUsersList from "../Components/NewUsersList/NewUsersList";
+import Transactions from '../Components/Transactions/Transactions'
 import {users} from '../Datas'
+import { TransactionsList } from "../Datas";
 
 function Home() {
   const [staticsDatas, setStaticDatas] = useState(staticDatas);
   const [newUsers, setNewUsers] = useState(users.slice(4))
+  const [transactionList, setTransactionList] = useState(TransactionsList)
 
   return (
     <div className="Home">
@@ -27,6 +30,10 @@ function Home() {
       <h4>آخرین کاربران</h4>
       <div>
         <NewUsersList list={newUsers} />
+      </div>
+      <h4>نراکنش ها</h4>
+      <div>
+        <Transactions transactionsList={transactionList} />
       </div>
     </div>
   );
