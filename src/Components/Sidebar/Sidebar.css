@@ -1,7 +1,7 @@
 .Sidebar {
     list-style-type: none;
     background-color: #1307ff;
-    height: 100vh;
+    height: 100%;
 }
 
 .Sidebar li {
