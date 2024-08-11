@@ -15,6 +15,7 @@ function NavMenu() {
         </button>
       </form>
       <div className="Nav-actions">
+        <img src="/assets/profileimg.jfif" className="Profile-img" alt="" />
         <IoIosNotifications />
         <IoExit />
       </div>

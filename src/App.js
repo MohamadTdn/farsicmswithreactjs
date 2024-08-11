@@ -18,7 +18,7 @@ function App() {
         <Col lg={2}>
           <Sidebar />
         </Col>
-        <Col lg={10}>{router}</Col>
+        <Col className="Main-data" lg={10}>{router}</Col>
       </Row>
     </Container>
   );

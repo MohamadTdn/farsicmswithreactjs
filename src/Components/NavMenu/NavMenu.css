@@ -37,3 +37,9 @@
     font-size: 25px;
     color: #ffff;
 }
+
+.Profile-img {
+    width: 30px;
+    border: 2px solid #ffff;
+    border-radius: 50%;
+}

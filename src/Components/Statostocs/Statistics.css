@@ -1,0 +1,23 @@
+.Statistics {
+    width: 200px;
+    text-align: center;
+    border-radius: 20px;
+    margin: 15px;
+    -webkit-box-shadow: 2px 3px 20px 2px #000000bf;
+    -moz-box-shadow: 2px 3px 20px 2px #000000bf;
+    box-shadow: 2px 3px 20px 2px #000000bf;
+}
+
+.red {
+    color: #ff0000;
+}
+
+.green {
+    color: #008000;
+}
+
+.Arrows {
+    display: block;
+    margin: 0 0 15px 0;
+    font-size: 20px;
+}
