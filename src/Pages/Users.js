@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
-import { users } from "../Datas";
 import { Button } from "@mui/material";
 import { MdEdit } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 function Users() {
   const [userList, setUserList] = useState([]);
@@ -47,16 +47,16 @@ function Users() {
       })
       .catch((error) => {
         error = new Error("cant delete this object");
-        console.error(error)
+        console.error(error);
       })
       .finally(() => {
-        console.log('done');
+        console.log("done");
       });
   }
 
   useEffect(() => {
-    getFromAPI()
-  }, [userList])
+    getFromAPI();
+  }, [userList]);
 
   return (
     <div>
@@ -89,18 +89,20 @@ function Users() {
                   >
                     حذف
                   </Button>
-                  <button
-                    style={{
-                      padding: "5px 15px",
-                      margin: "10px",
-                      backgroundColor: "blue",
-                      color: "#ffff",
-                      border: "none",
-                    }}
-                    className="edit-btn"
-                  >
-                    <MdEdit />
-                  </button>
+                  <Link to={`/edituser/${user[0]}`}>
+                    <button
+                      style={{
+                        padding: "5px 15px",
+                        margin: "10px",
+                        backgroundColor: "blue",
+                        color: "#ffff",
+                        border: "none",
+                      }}
+                      className="edit-btn"
+                    >
+                      <MdEdit />
+                    </button>
+                  </Link>
                 </td>
               </tr>
             );
