@@ -17,7 +17,7 @@ function NewUsersList({ list }) {
           </tr>
         </thead>
         <tbody>
-          {list.slice(0,4).map((item) => {
+          {list.slice(3).map((item) => {
             return (
               <tr>
                 <td>{item[1].id}</td>
