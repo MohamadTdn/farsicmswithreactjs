@@ -20,10 +20,9 @@ npm start
 4. React Router
 5. React Icons
 6. MUI
-7. React
-8. Recharts
-9. Firebase Realtime Database
-10. Firebase API
+7. Recharts
+8. Firebase Realtime Database
+9. Firebase API
 
 ### Api for this project is for firebase realtime database
 
