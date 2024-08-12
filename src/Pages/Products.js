@@ -1,9 +1,61 @@
-import React from "react";
-import { products } from "../Datas";
+import React, { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
 import { Button } from "@mui/material";
 
 function Products() {
+  const [productList, setProductList] = useState([]);
+
+  async function getProductsFromAPI() {
+    await fetch(
+      "https://farsicmsdb-25ad0-default-rtdb.firebaseio.com/products.json",
+      {
+        method: "GET",
+      }
+    )
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setProductList((prevList) => {
+          return (prevList = Object.entries(data));
+        });
+      })
+      .catch((err) => {
+        err = new Error("cant get from api");
+        console.error(err);
+      })
+      .finally(() => {
+        console.log("done");
+      });
+  }
+
+  useEffect(() => {
+    getProductsFromAPI();
+  });
+
+  async function deleteProduct (productId) {
+    await fetch(
+      `https://farsicmsdb-25ad0-default-rtdb.firebaseio.com/products/${productId}.json`,
+      {
+        method: "DELETE",
+      }
+    )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        err = new Error("cant delete this object");
+        console.error(err);
+      })
+      .finally(() => {
+        console.log("done");
+      });
+  };
+
+  useEffect(() => {
+    getProductsFromAPI()
+  }, [productList])
+
   return (
     <div>
       <h4>محصولات</h4>
@@ -18,19 +70,29 @@ function Products() {
           </tr>
         </thead>
         <tbody>
-          {products.map((product) => {
+          {productList.map((product) => {
             return (
-              <tr>
-                <td>{product.id}</td>
-                <td>{product.title}</td>
-                <td>{product.price}</td>
-                <td>{product.count}</td>
+              <tr key={product[0]}>
+                <td>{product[1].id}</td>
+                <td>{product[1].title}</td>
+                <td>{product[1].price}</td>
+                <td>{product[1].count}</td>
                 <td>
-                  <img style={{width: '40px', borderRadius: '50%'}} className="Product-img" src={product.imgSrc} alt="" />
+                  <img
+                    style={{ width: "40px", borderRadius: "50%" }}
+                    className="Product-img"
+                    src={product[1].img}
+                    alt=""
+                  />
                 </td>
                 <td>
-                  <Button variant="contained" color="error">حذف</Button>
-                  <Button variant="contained">ویرایش</Button>
+                  <Button
+                    onClick={() => deleteProduct(product[0])}
+                    variant="contained"
+                    color="error"
+                  >
+                    حذف
+                  </Button>
                 </td>
               </tr>
             );

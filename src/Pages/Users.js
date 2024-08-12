@@ -74,7 +74,7 @@ function Users() {
         <tbody>
           {userList.map((user) => {
             return (
-              <tr>
+              <tr key={user[0]}>
                 <td>{user[1].id}</td>
                 <td>{user[1].name}</td>
                 <td>{user[1].age}</td>
