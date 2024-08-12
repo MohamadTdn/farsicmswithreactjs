@@ -6,6 +6,58 @@ import { MdEdit } from "react-icons/md";
 
 function Users() {
   const [userList, setUserList] = useState([]);
+
+  async function getFromAPI() {
+    await fetch(
+      "https://farsicmsdb-25ad0-default-rtdb.firebaseio.com/users.json",
+      {
+        method: "GET",
+      }
+    )
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setUserList((prevList) => {
+          return (prevList = Object.entries(data));
+        });
+      })
+      .catch((error) => {
+        error = new Error("cant get from api");
+        console.error(error);
+      })
+      .finally(() => {
+        console.log("done");
+      });
+  }
+
+  useEffect(() => {
+    getFromAPI();
+  }, []);
+
+  async function deleteUser(userId) {
+    await fetch(
+      `https://farsicmsdb-25ad0-default-rtdb.firebaseio.com/users/${userId}.json`,
+      {
+        method: "DELETE",
+      }
+    )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        error = new Error("cant delete this object");
+        console.error(error)
+      })
+      .finally(() => {
+        console.log('done');
+      });
+  }
+
+  useEffect(() => {
+    getFromAPI()
+  }, [userList])
+
   return (
     <div>
       <h4>کاربران</h4>
@@ -23,15 +75,15 @@ function Users() {
           {userList.map((user) => {
             return (
               <tr>
-                <td>{user.id}</td>
-                <td>{user.name}</td>
-                <td>{user.age}</td>
+                <td>{user[1].id}</td>
+                <td>{user[1].name}</td>
+                <td>{user[1].age}</td>
                 <td>
-                  <img className="Profile-img" src={user.imgSrc} alt="" />
+                  <img className="Profile-img" src={user[1].img} alt="" />
                 </td>
                 <td>
                   <Button
-                    // onClick={() => deleteUser(user.id)}
+                    onClick={() => deleteUser(user[0])}
                     variant="contained"
                     color="error"
                   >

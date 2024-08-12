@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
@@ -32,7 +32,7 @@ function NewUser() {
     });
   };
 
-  const addUserHandler = (e) => {
+  async function addUserHandler (e) {
     e.preventDefault();
 
     let newUser = {
@@ -43,21 +43,40 @@ function NewUser() {
       img: imgSrc,
     };
 
-    fetch("https://farsicmsdb-25ad0-default-rtdb.firebaseio.com/users.json", {
+    await fetch("https://farsicmsdb-25ad0-default-rtdb.firebaseio.com/users.json", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
       },
       body: JSON.stringify(newUser),
     })
-      .then((res) => [console.log(res)])
+      .then((res) => {
+        console.log(res);
+        makeInputEmpty()
+      })
       .catch((err) => {
         err = new Error("cant post this object");
+        console.error(err)
       })
       .finally(() => {
         console.log("done");
       });
   };
+
+  const makeInputEmpty = () => {
+    setName((prevName) => {
+      return (prevName = "");
+    });
+    setEmail((prevEmail) => {
+      return (prevEmail = "");
+    });
+    setAge((prevAge) => {
+      return (prevAge = "");
+    });
+    setImgSrc((prevImg) => {
+      return (prevImg = "");
+    });
+  }
 
   return (
     <div className="NewUser">
