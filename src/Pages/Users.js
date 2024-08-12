@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
 import { users } from "../Datas";
 import { Button } from "@mui/material";
 import { MdEdit } from "react-icons/md";
 
 function Users() {
+  const [userList, setUserList] = useState([]);
   return (
     <div>
       <h4>کاربران</h4>
@@ -19,7 +20,7 @@ function Users() {
           </tr>
         </thead>
         <tbody>
-          {users.map((user) => {
+          {userList.map((user) => {
             return (
               <tr>
                 <td>{user.id}</td>
@@ -29,8 +30,25 @@ function Users() {
                   <img className="Profile-img" src={user.imgSrc} alt="" />
                 </td>
                 <td>
-                  <Button variant="contained" color="error">حذف</Button>
-                  <button style={{padding: '5px 15px', margin: '10px', backgroundColor: 'blue', color: '#ffff', border: 'none'}} className="edit-btn"><MdEdit/></button>
+                  <Button
+                    // onClick={() => deleteUser(user.id)}
+                    variant="contained"
+                    color="error"
+                  >
+                    حذف
+                  </Button>
+                  <button
+                    style={{
+                      padding: "5px 15px",
+                      margin: "10px",
+                      backgroundColor: "blue",
+                      color: "#ffff",
+                      border: "none",
+                    }}
+                    className="edit-btn"
+                  >
+                    <MdEdit />
+                  </button>
                 </td>
               </tr>
             );
