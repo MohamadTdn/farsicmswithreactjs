@@ -1,16 +1,41 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Statistics from "../Components/Statostocs/Statistics";
 import { staticDatas } from "../Datas";
 import Chart from "../Components/Chart/Chart";
 import NewUsersList from "../Components/NewUsersList/NewUsersList";
-import Transactions from '../Components/Transactions/Transactions'
-import {users} from '../Datas'
+import Transactions from "../Components/Transactions/Transactions";
+import { users } from "../Datas";
 import { TransactionsList } from "../Datas";
 
 function Home() {
   const [staticsDatas, setStaticDatas] = useState(staticDatas);
-  const [newUsers, setNewUsers] = useState(users.slice(4))
-  const [transactionList, setTransactionList] = useState(TransactionsList)
+  const [newUsers, setNewUsers] = useState([]);
+  const [transactionList, setTransactionList] = useState(TransactionsList);
+
+  async function getUsersFromAPI() {
+    await fetch("https://farsicmsdb-25ad0-default-rtdb.firebaseio.com/users.json", {
+      method: "GET",
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setNewUsers((prevState) => {
+          return (prevState = Object.entries(data));
+        });
+      })
+      .catch((err) => {
+        err = new Error("cant get from api");
+        console.error(err);
+      })
+      .finally(() => {
+        console.log("done");
+      });
+  }
+
+  useEffect(() => {
+    getUsersFromAPI()
+  }, []);
 
   return (
     <div className="Home">

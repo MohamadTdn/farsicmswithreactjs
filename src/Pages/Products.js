@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
 import { Button } from "@mui/material";
+import { heIL } from "@mui/material/locale";
 
 function Products() {
   const [productList, setProductList] = useState([]);
@@ -66,6 +67,7 @@ function Products() {
             <th>نام</th>
             <th>تعداد</th>
             <th>قیمت</th>
+            <th>عکس محصول</th>
             <th>تغییرات</th>
           </tr>
         </thead>
@@ -79,7 +81,7 @@ function Products() {
                 <td>{product[1].count}</td>
                 <td>
                   <img
-                    style={{ width: "40px", borderRadius: "50%" }}
+                    style={{ width: "40px", height: '40px', borderRadius: "50%" }}
                     className="Product-img"
                     src={product[1].img}
                     alt=""

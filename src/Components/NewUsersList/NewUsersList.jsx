@@ -17,14 +17,14 @@ function NewUsersList({ list }) {
           </tr>
         </thead>
         <tbody>
-          {list.map((item) => {
+          {list.slice(0,4).map((item) => {
             return (
               <tr>
-                <td>{item.id}</td>
-                <td>{item.name}</td>
-                <td>{item.age}</td>
+                <td>{item[1].id}</td>
+                <td>{item[1].name}</td>
+                <td>{item[1].age}</td>
                 <td>
-                  <img className="Profile-img" src={item.imgSrc} alt="" />
+                  <img className="Profile-img" src={item[1].img} alt="" />
                 </td>
                 <td>
                   <Button variant="danger">حذف</Button>

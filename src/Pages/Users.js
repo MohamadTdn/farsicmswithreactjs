@@ -79,7 +79,7 @@ function Users() {
                 <td>{user[1].name}</td>
                 <td>{user[1].age}</td>
                 <td>
-                  <img className="Profile-img" src={user[1].img} alt="" />
+                  <img className="Profile-img" style={{width: '40px', height: '40px'}} src={user[1].img} alt="" />
                 </td>
                 <td>
                   <Button
